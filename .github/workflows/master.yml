@@ -114,7 +114,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: firmware-${{matrix.platform}}
-          path: output/images/openipc*nor*
+          path: openipc/output/images/openipc*nor*
 
       - name: Upload release firmware
         if: github.event_name == 'release'
@@ -124,4 +124,4 @@ jobs:
           token: ${{ secrets.RELEASE_TOKEN }}
           files: |
             ${{env.NORFW}}
-            output/images/openipc*.bin
+            openipc/output/images/openipc*.bin
